@@ -114,3 +114,9 @@ retornarLetra :: Number -> [Char] -> Char
 retornarLetra posicion = last . take (posicion+1) 
 
 --Punto 2c
+cesar :: Char -> [Char] -> String
+cesar letraClave textoEncriptado = zipWithIf desencriptarLetra condicion (repeat letraClave) textoEncriptado
+
+condicion :: Char -> Bool
+condicion letra = elem letra ['a'..'z'] 
+
